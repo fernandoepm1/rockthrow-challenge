@@ -1,11 +1,11 @@
 require 'csv'
 
-class Campeonato
+class Championship
   class << self
     def headers
       [
-        ['RANKING DE PLAYERS'],
-        ['JOGADOR', 'PONTUAÇÃO FINAL']
+        ['FINAL RANKING'],
+        ['PLAYER', 'FINAL SCORE']
       ]
     end
 
@@ -16,13 +16,13 @@ class Campeonato
       ]
     end
 
-    def gerar_classificacao
-      CSV.open('classificacao.csv', 'wb') do |csv|
+    def generate_scoring
+      CSV.open('scoring.csv', 'wb') do |csv|
         headers.each { |h| csv << h }
         content.each { |c| csv << c }
       end
     end
   end
 
-  gerar_classificacao
+  generate_scoring
 end
