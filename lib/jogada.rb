@@ -1,7 +1,6 @@
 require_relative '../helpers/init_helper'
 require_relative './jogador'
 require_relative './resultado'
-require 'byebug'
 
 class Jogada
   include InitHelper
